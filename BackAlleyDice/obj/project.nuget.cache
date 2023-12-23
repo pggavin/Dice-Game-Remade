@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OU64gJiLcHwX9ut2VmVPN1gzLPd3pdWFj91ppZWS48cgh2FJWDDJAkjwSdLKjfOt5iyMl29P87eQln+orMIYww==",
+  "dgSpecHash": "mnSPmu1Trw5OAXMxEguTUKmV5YPVqYaRhnc9SC129WMm5RHCC2LwPwfJRCcxxy3ehc4vChpe/vm/x1MY/CmAwA==",
   "success": true,
-  "projectFilePath": "D:\\Repos\\BackAlleyDice\\BackAlleyDice\\BackAlleyDice.csproj",
+  "projectFilePath": "D:\\Repos\\BackAlleyDice\\Dice-Game-Remade\\BackAlleyDice\\BackAlleyDice.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

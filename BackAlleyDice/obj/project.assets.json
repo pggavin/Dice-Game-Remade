@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Repos\\BackAlleyDice\\BackAlleyDice\\BackAlleyDice.csproj",
+      "projectUniqueName": "D:\\Repos\\BackAlleyDice\\Dice-Game-Remade\\BackAlleyDice\\BackAlleyDice.csproj",
       "projectName": "BackAlleyDice",
-      "projectPath": "D:\\Repos\\BackAlleyDice\\BackAlleyDice\\BackAlleyDice.csproj",
+      "projectPath": "D:\\Repos\\BackAlleyDice\\Dice-Game-Remade\\BackAlleyDice\\BackAlleyDice.csproj",
       "packagesPath": "C:\\Users\\vanhu\\.nuget\\packages\\",
-      "outputPath": "D:\\Repos\\BackAlleyDice\\BackAlleyDice\\obj\\",
+      "outputPath": "D:\\Repos\\BackAlleyDice\\Dice-Game-Remade\\BackAlleyDice\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\vanhu\\AppData\\Roaming\\NuGet\\NuGet.Config",
