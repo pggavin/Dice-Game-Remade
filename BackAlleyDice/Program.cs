@@ -62,6 +62,17 @@ GameStart:
     ██████████████████████████████████████████████████████";
     // Used for the start screen
 
+    var betNames = new string[] 
+    {
+        null,
+        "Big",         "Small",     "Odd",       "Even",
+        "All 1s",      "All 2s",    "All 3s",    "All 4s",    "All 5s",    "All 6s",
+        "Double 1s",   "Double 2s", "Double 3s", "Double 4s", "Double 5s", "Double 6s",
+        "Any Triples", "4 or 17",   "5 or 16",   "6 or 15",
+        "7 or 14",     "8 or 13",   "9 or 12",   "10 or 11"
+    };
+    // Used in betting screens
+
     #endregion Initial Setup
 
     #region Game Intro
@@ -135,10 +146,11 @@ GameLoop:
     ██                   ( Min : $ 1 )                  ██
     ██                                                  ██
     ██████████████████████████████████████████████████████
-       Current Balance : ${0}
+       Bet : {0}
+       Current Balance : ${1}
 
        Hit enter to input your bet amount
-       or to go back to the bet menu (no input)", userBalance);
+       or to go back to the bet menu (no input)", betNames[userBetType], userBalance);
 
     int userBetAmount;
     while (!(int.TryParse(userInput = ReadLine(), out userBetAmount) && userBetAmount > 0 && userBetAmount <= userBalance))
@@ -232,39 +244,26 @@ GameLoop:
 
     #region End Results
 
+    string resultMessage = betWon ? "Won!" : "Lost";
+    int betResultAmount = userBetAmount * (betWon ? odds[userBetType] : -1);
+    
     WriteLine(@"
     ██████████████████████████████████████████████████████
     ██                                                  ██
     ██                     You {0}                     ██
     ██                                                  ██
-    ██████████████████████████████████████████████████████",
-    betWon ? "Won!" : "Lost");
-
-    if (betWon)
-    {
-        WriteLine(@"
-       Gained      : ${0}
-       Old Balance : ${1}
-       New Balance : ${2}",
-     /*Gained     */ userBetAmount * odds[userBetType],
-     /*Old Balance*/ userBalance,
-     /*New Balance*/ userBalance + userBetAmount * odds[userBetType]);
-
-        userBalance += userBetAmount * odds[userBetType];
-    }
-    else
-    {
-        WriteLine(@"
-       Lost        : ${0}
-       Old Balance : ${1}
-       New Balance : ${2}",
-     /*Gained     */ userBetAmount,
-     /*Old Balance*/ userBalance,
-     /*New Balance*/ userBalance - userBetAmount);
-
-       userBalance -= userBetAmount;
-    }
-
+    ██████████████████████████████████████████████████████
+       Bet Type    : {1}
+       {2}      : ${3}
+       Old Balance : ${4}
+       New Balance : ${5}",
+    resultMessage, betNames[userBetType],
+    betWon ? "Gained" : "Lost  ", Math.Abs(betResultAmount),
+    userBalance, userBalance + betResultAmount);
+    
+    // Update the user balance.
+    userBalance += betResultAmount;
+    
     WriteLine("\n Press any key to continue");
 
     ReadKey();
