@@ -81,17 +81,12 @@ GameStart:
 
     ReadKey();
 
-    SetCursorPosition(0,0);
-    WriteLine(splash.Replace('█', '▓'));
-    Sleep(500);
-
-    SetCursorPosition(0,0);
-    WriteLine(splash.Replace('█', '▒'));
-    Sleep(250);
-
-    SetCursorPosition(0,0);
-    WriteLine(splash.Replace('█', '░'));
-    Sleep(125);
+    foreach (var (ch, delay) in new[] { ('▓', 500), ('▒', 250), ('░', 125) })
+    {
+        SetCursorPosition(0, 0);
+        WriteLine(splash.Replace('█', ch));
+        Sleep(delay);
+    }
 
     Clear();
 
